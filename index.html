@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="./src/css/styles.css" />
         <link rel="stylesheet" href="./src/css/dark-mode.css" />
         <link rel="stylesheet" href="./src/css/img-zoom.css" />
+        <script src="./src/js/early-darkmode.js"></script>
     </head>
 
     <body>
@@ -55,7 +56,7 @@
 
                 <div class="stats-section">
                     <span class="stats-text posts"
-                        ><strong>12</strong> posts</span
+                        ><strong>19</strong> posts</span
                     >
                     <span class="stats-text followers"
                         ><strong>748</strong> followers</span
@@ -401,4 +402,11 @@
     <script src="./src/js/follow-btn.js"></script>
     <script src="./src/js/img-zoom.js"></script>
     <script src="./src/js/navbar.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
 </html>
